@@ -10,3 +10,17 @@ jobs:
       - uses: ./action-a
         with:
           MY_NAME: "Mona"
+  
+
+  create_comment:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions-ecosystem/action-create-comment@v1
+        with:
+          github_token: ${{ secrets.github_token }}
+          body: |
+            Hello world @${{ github.actor }} 👋!
+
+
+        

@@ -11,8 +11,12 @@ jobs:
         with:
           MY_NAME: "Mona"
   
-      - name: Actions Ecosystem Create Comment
-        uses: actions-ecosystem/action-create-comment@v1.0.0
+
+  create_comment:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions-ecosystem/action-create-comment@v1
         with:
           github_token: ${{ secrets.github_token }}
           body: |
